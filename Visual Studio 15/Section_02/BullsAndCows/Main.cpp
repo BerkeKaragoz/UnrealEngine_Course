@@ -1,22 +1,25 @@
 #include <iostream>
 #include <string>
 #include "Main.h"
+#include "FBullCow.h"
 
-using namespace std;
+/*
+std::
+*/
 
-void printIntro();
-string getGuessprint();
-bool askReplay();
 int main() {
 
 	printIntro();
 	playGame();
-	
+
+
 	return 0;
 }
 
 void playGame()
 {
+	FBullCow BCGame;
+
 	int i;
 	constexpr int TURNS = 5;
 
@@ -31,28 +34,28 @@ void printIntro() {
 	constexpr int LENGHT = 5;
 
 	//Introduce
-	cout << "Welcome to Bulls and Cows!\n";
-	cout << "Guess the " << LENGHT << " letter isogram word.\n\n";
+	std::cout << "Welcome to Bulls and Cows!\n";
+	std::cout << "Guess the " << LENGHT << " letter isogram word.\n\n";
 	return;
 }
 
-string getGuessprint() {
+std::string getGuessprint() {
 	//Get a guess
-	string Guess = "";
+	std::string Guess = "";
 
-	cout << "Enter your guess: ";
-	getline(cin, Guess);
+	std::cout << "Enter your guess: ";
+	std::getline(std::cin, Guess);
 
 	//repeat the guess back
-	cout << "Guess is: " << Guess << "\n\n";
+	std::cout << "Guess is: " << Guess << "\n\n";
 
 	return Guess;
 }
 
 bool askReplay() {
-	cout << "Do you want to play again? (y/n): ";
-	string Response = "";
-	getline(cin, Response);
+	std::cout << "Do you want to play again? (y/n): ";
+	std::string Response = "";
+	std::getline(std::cin, Response);
 
 	return (Response[0] == 'y') || (Response[0] == 'Y');
 }
