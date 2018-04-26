@@ -2,5 +2,5 @@
 
 void playGame();
 void printIntro();
-std::string getGuessprint();
+FText getGuessprint();
 bool askReplay();

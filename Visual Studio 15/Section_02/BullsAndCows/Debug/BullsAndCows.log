@@ -1,4 +1,5 @@
 ﻿  Main.cpp
-c:\google drive\github\unreal_engine\visual studio 15\section_02\bullsandcows\main.cpp(21): warning C4101: 'BCGame': unreferenced local variable
+  FBullCow.cpp
+  Generating Code...
   BullsAndCows.vcxproj -> C:\Google Drive\GitHub\Unreal_Engine\Visual Studio 15\Section_02\Debug\BullsAndCows.exe
   BullsAndCows.vcxproj -> C:\Google Drive\GitHub\Unreal_Engine\Visual Studio 15\Section_02\Debug\BullsAndCows.pdb (Full PDB)
