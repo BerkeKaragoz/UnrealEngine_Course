@@ -25,9 +25,20 @@ bool FBullCow::IsGameWon() const
 	return false;
 }
 
-bool FBullCow::CheckGuessValidity(FString) const
+EGuessStatus FBullCow::CheckGuessValidity(FString Guess) const
 {
-	return false;
+	if (false) {
+		return EGuessStatus::Not_Isogram;
+	}
+	else if (false) {
+		return EGuessStatus::Not_Lowercase;
+	}
+	else if (Guess.length() != GetHiddenWordLenght()) {
+		return EGuessStatus::Wrong_Lenght;
+	}
+	else {
+		return EGuessStatus::OK;
+	}
 }
 
 BullCowCount FBullCow::SubmitGuess(FString Guess)

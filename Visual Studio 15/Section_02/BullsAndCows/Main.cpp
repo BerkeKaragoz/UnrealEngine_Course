@@ -31,16 +31,30 @@ void playGame()
 
 	int32 i;
 
+	EGuessStatus Status = EGuessStatus::Invalid_Status;
 	do {
 		for (i = 0; i < Maxtries; i++) {
-			FText Guess = getGuessprint();
-			BullCowCount BullCowCount = BCGame.SubmitGuess(Guess);
+			do {
 
-			std::cout << "Bulls = " << BullCowCount.Bulls << ". Cows = " << BullCowCount.Cows << std::endl;
+
+				FText Guess = getGuessprint();
+
+				Status = BCGame.CheckGuessValidity(Guess);
+				switch (Status) {
+
+				case EGuessStatus::Wrong_Lenght: std::cout << "Please write a " << BCGame.GetHiddenWordLenght() << " letter word.\n"; break;
+				case EGuessStatus::OK: {
+					BullCowCount BullCowCount = BCGame.SubmitGuess(Guess);
+					std::cout << "Bulls = " << BullCowCount.Bulls << ". Cows = " << BullCowCount.Cows << std::endl; break;}
+				default:std::cout << "Error.\n";
+					break;
+				}
+			} while (Status != EGuessStatus::OK);
+
 
 		}
 	} while (askReplay());
-	
+
 }
 
 void printIntro() {

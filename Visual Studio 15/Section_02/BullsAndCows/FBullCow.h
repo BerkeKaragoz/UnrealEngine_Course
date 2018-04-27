@@ -4,6 +4,19 @@
 using FString = std::string;
 using int32 = int;
 
+enum class EGuessStatus {
+	Invalid_Status,
+	OK,
+	Not_Isogram,
+	Wrong_Lenght,
+	Not_Lowercase
+};
+
+enum class EResetStatus {
+	No_Hidden_Word,
+	OK
+};
+
 struct BullCowCount {	int32 Bulls = 0, Cows = 0;};
 
 class FBullCow {
@@ -15,7 +28,7 @@ public:
 	int32 CurrentTry() const;
 	int32 GetHiddenWordLenght() const;
 	bool IsGameWon() const;
-	bool CheckGuessValidity(FString) const; //Adjust after
+	EGuessStatus CheckGuessValidity(FString) const; //Adjust after
 
 	BullCowCount SubmitGuess(FString);
 
