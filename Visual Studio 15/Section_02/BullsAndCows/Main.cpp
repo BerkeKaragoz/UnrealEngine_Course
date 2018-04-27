@@ -24,16 +24,12 @@ int main() {
 
 void playGame()
 {
-	BCGame.Reset();
-	int32 Maxtries = BCGame.MaxTries();
-
-	std::cout << Maxtries << std::endl;
-
 	int32 i;
 
 	EGuessStatus Status = EGuessStatus::Invalid_Status;
 	do {
-		for (i = 0; i < Maxtries; i++) {
+		BCGame.Reset();
+		while ( !BCGame.IsGameWon() && BCGame.CurrentTry() <= BCGame.MaxTries()) {
 			do {
 
 
