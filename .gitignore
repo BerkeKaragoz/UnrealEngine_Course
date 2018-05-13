@@ -1,4 +1,4 @@
-# Unreal Generated Files #
+############### Unreal Generated Files ############################################################
 
 */Build
 */Binaries
@@ -7,6 +7,9 @@
 */Saved
 BuildingEscape_03/Content/StarterContent/
 
-# VS Generated Files #
+############## VS Generated Files ##############################################################
 
 *.VC.db
+*.suo
+*.VC.opendb
+*.sln
