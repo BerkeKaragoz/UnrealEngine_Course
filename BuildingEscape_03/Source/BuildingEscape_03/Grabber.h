@@ -1,8 +1,10 @@
 // Learning
 
 #pragma once
+#include "PhysicsEngine/PhysicsHandleComponent.h"
 #include "DrawDebugHelpers.h"
 #include "CoreMinimal.h"
+#include "Components/InputComponent.h"
 #include "Components/ActorComponent.h"
 #include "Grabber.generated.h"
 
@@ -27,4 +29,14 @@ public:
 private:
 	float Reach = 100.f;
 	
+	UPhysicsHandleComponent* PhysicsHandle = nullptr;
+
+	UInputComponent* InputComponent = nullptr;
+
+	void Grab();
+	void Release();
+	void FindPhysicsHandleComponent();
+	void SetupInputComponent();
+
+	FHitResult GetFirstPhysicsBodyInReach() const;
 };
